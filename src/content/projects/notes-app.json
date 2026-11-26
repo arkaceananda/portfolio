@@ -1,0 +1,13 @@
+{
+  "title": "Notes App",
+  "briefDescription": "Aplikasi catatan sederhana dengan sinkronisasi lokal.",
+  "longDescription": "Notes App membantu pengguna mencatat ide dengan cepat dan menyimpannya secara lokal di perangkat. Dibangun dengan arsitektur MVVM dan Jetpack Compose.",
+  "techStack": ["Kotlin", "Jetpack Compose", "Room"],
+  "videoUrl": "/videos/demo.mp4",
+  "githubUrl": "https://github.com/arkaceananda/notes-app",
+  "apkUrl": "/apks/demo.apk",
+  "accentColor": "#A0A0A0",
+  "problem": "Aplikasi catatan yang ada terlalu berat dan membutuhkan akun.",
+  "solution": "Membangun aplikasi ringan yang bekerja offline tanpa login.",
+  "keyFeatures": ["Catatan offline", "Pencarian cepat", "Tema gelap"]
+}

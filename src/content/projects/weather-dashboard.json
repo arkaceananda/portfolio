@@ -1,0 +1,13 @@
+{
+  "title": "Weather Dashboard",
+  "briefDescription": "Dashboard cuaca real-time dengan grafik interaktif.",
+  "longDescription": "Weather Dashboard menampilkan prakiraan cuaca terkini dari API publik dengan visualisasi grafik suhu dan kelembapan yang responsif.",
+  "techStack": ["Kotlin", "Jetpack Compose", "Retrofit"],
+  "videoUrl": "/videos/demo.mp4",
+  "githubUrl": "https://github.com/arkaceananda/weather-dashboard",
+  "apkUrl": "/apks/demo.apk",
+  "accentColor": "#51A2DA",
+  "problem": "Informasi cuaca sulit dipahami karena hanya berupa angka.",
+  "solution": "Menyajikan data cuaca dalam grafik yang mudah dibaca.",
+  "keyFeatures": ["Cuaca real-time", "Grafik suhu", "Multi-kota"]
+}
