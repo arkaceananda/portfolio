@@ -8,7 +8,7 @@ interface ProjectCardProps {
 export default function ProjectCard({ project, onOpen }: ProjectCardProps) {
   return (
     <article
-      className="flex h-full min-h-72 flex-col rounded-xl border bg-[#141414] p-6 text-foreground"
+      className="flex aspect-[3/5] min-h-[24rem] flex-col rounded-xl border border-silver/20 bg-background p-6 text-foreground shadow-sm"
       style={{ borderColor: project.accentColor }}
     >
       <h3 className="font-fraunces text-2xl font-semibold">{project.title}</h3>

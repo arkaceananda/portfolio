@@ -5,6 +5,30 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.5.0] - 2026-11-26
+
+### Added
+
+- Assembled `index.astro` with all sections and hydration directives.
+- React Bits FlipCard and Lanyard components (lazy-loaded, `three`-based) with a toggleable intro card: plain photo on the front, dithered photo on the back, anchored right and draggable across the hero.
+- Three-preview project carousel with blurred neighbors, keyboard/swipe navigation, and infinite looping.
+- `BackToTop` floating bubble button (static Astro + vanilla script).
+- Linux and GitHub tech icons; removed placeholder icons.
+
+### Changed
+
+- Hero shows the `whoami` terminal and an sr-only name heading; smooth anchor scrolling added with reduced-motion fallback.
+- Tech stack uses OrbitImages with larger, theme-aware items.
+- Terminal text stays at the top; mobile lanyard is sized larger and rendered above the intro.
+- `dark:` variants mapped to `[data-theme="dark"]`; whoami text is green; social cards use a white surface with a GitHub icon.
+- Lanyard render loop idles when still and caps pixel ratio at 1.5.
+
+### Fixed
+
+- Navigation menu no longer includes "Back to top" on desktop.
+
+[0.5.0]: https://github.com/arkaceananda/portfolio/releases/tag/v0.5.0
+
 ## [0.4.1] - 2026-11-26
 
 ### Added

@@ -20,7 +20,7 @@ export default function FooterTerminal() {
 
   return (
     <Terminal sequence={false} className="border-silver/20 bg-[#141414]">
-      <div className="footer-terminal" role="group" aria-label="Terminal: whoami">
+      <div className="footer-terminal min-h-48" role="group" aria-label="Terminal: whoami">
         <p className="terminal-prompt">
           <span className="t-user">arkaaceananda@fedora</span>{" "}
           <span className="t-dim">in</span> <span className="t-dir">~</span>{" "}
@@ -43,7 +43,7 @@ export default function FooterTerminal() {
           <time aria-hidden="true">{time}</time>
         </p>
         <p className="terminal-cmd">
-          <span className="t-arrow">&gt;</span> whoami
+          <span className="t-arrow">&gt;</span> <span className="t-whoami">whoami</span>
         </p>
         <p className="terminal-out">Arka Aceananda - Android Developer</p>
         <p className="terminal-out t-dim">

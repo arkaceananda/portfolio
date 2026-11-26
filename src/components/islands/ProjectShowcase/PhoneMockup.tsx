@@ -1,3 +1,5 @@
+import { Android as AndroidMockup } from "@/components/magicui/android";
+
 interface PhoneMockupProps {
   videoUrl: string;
   title: string;
@@ -5,19 +7,14 @@ interface PhoneMockupProps {
 
 export default function PhoneMockup({ videoUrl, title }: PhoneMockupProps) {
   return (
-    <div className="relative w-[260px] rounded-[40px] border-[8px] border-black bg-black p-1 shadow-2xl">
-      <div className="relative aspect-[9/19.5] overflow-hidden rounded-[32px] bg-black">
-        <video
-          src={videoUrl}
-          autoPlay
-          muted
-          loop
-          playsInline
-          aria-label={`Demo ${title}`}
-          className="h-full w-full object-cover"
-        />
-      </div>
-      <div className="absolute top-2 left-1/2 h-1 w-16 -translate-x-1/2 rounded-full bg-white/30" />
+    <div data-theme="dark" className="w-[220px] max-w-full sm:w-[240px]">
+      <AndroidMockup
+        videoSrc={videoUrl}
+        width={433}
+        height={882}
+        className="h-auto w-full"
+        aria-label={`Demo ${title}`}
+      />
     </div>
   );
 }

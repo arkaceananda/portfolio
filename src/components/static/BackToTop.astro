@@ -1,0 +1,27 @@
+<button
+  id="back-to-top"
+  type="button"
+  aria-label="Back to top"
+  class="fixed right-5 bottom-24 z-50 hidden h-12 w-12 items-center justify-center rounded-full border border-silver/20 bg-background/90 text-foreground shadow-lg backdrop-blur-sm transition-colors hover:bg-silver/10 sm:bottom-8"
+>
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M12 19V5" />
+    <path d="m5 12 7-7 7 7" />
+  </svg>
+</button>
+
+<script>
+  const button = document.getElementById("back-to-top");
+  if (button) {
+    const onScroll = (): void => {
+      const shouldShow = window.scrollY > 400;
+      button.classList.toggle("hidden", !shouldShow);
+      button.classList.toggle("flex", shouldShow);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    button.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+</script>

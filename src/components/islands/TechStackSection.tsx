@@ -1,36 +1,21 @@
-import type { ReactNode } from "react";
-import {
-  Box,
-  Cloud,
-  Code,
-  Cpu,
-  Database,
-  GitBranch,
-  Globe,
-  Layers,
-  Palette,
-  Smartphone,
-  Terminal,
-  Zap,
-} from "lucide-react";
+import OrbitImages from "@/components/OrbitImages";
 
-import { IconCloud } from "@/components/magicui/icon-cloud";
+interface OrbitSkill {
+  src: string;
+  alt: string;
+}
 
-const ICONS: ReactNode[] = [
-  <Code key="code" />,
-  <Smartphone key="smartphone" />,
-  <Layers key="layers" />,
-  <Database key="database" />,
-  <GitBranch key="git" />,
-  <Palette key="palette" />,
-  <Terminal key="terminal" />,
-  <Cloud key="cloud" />,
-  <Zap key="zap" />,
-  <Box key="box" />,
-  <Cpu key="cpu" />,
-  <Globe key="globe" />,
+const SKILLS: OrbitSkill[] = [
+  { src: "/tech/kotlin.svg", alt: "Kotlin" },
+  { src: "/tech/android.svg", alt: "Android" },
+  { src: "/tech/java.svg", alt: "Java" },
+  { src: "/tech/sqlite.svg", alt: "SQLite" },
+  { src: "/tech/firebase.svg", alt: "Firebase" },
+  { src: "/tech/linux.svg", alt: "Linux" },
+  { src: "/tech/git.svg", alt: "Git" },
+  { src: "/tech/github.svg", alt: "GitHub" },
 ];
 
 export default function TechStackSection() {
-  return <IconCloud icons={ICONS} showControl />;
+  return <OrbitImages images={SKILLS} itemSize={92} pathColor="currentColor" showPath />;
 }

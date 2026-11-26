@@ -19,7 +19,7 @@ export default function HeroBackground() {
   return (
     <div
       aria-hidden="true"
-      className="pointer-events-none absolute inset-0 -z-10 opacity-60"
+      className="pointer-events-none absolute inset-0 z-0 opacity-100"
     >
       <FlickeringGrid
         color="rgb(160, 160, 160)"

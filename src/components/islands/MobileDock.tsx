@@ -15,7 +15,7 @@ export default function MobileDock() {
   return (
     <nav
       aria-label="Navigasi mobile"
-      className="fixed inset-x-0 bottom-0 z-50 flex justify-center pb-[calc(8px+env(safe-area-inset-bottom))] sm:hidden"
+      className="fixed inset-x-0 bottom-0 z-50 flex justify-center pb-[calc(24px+env(safe-area-inset-bottom))] sm:hidden"
     >
       <Dock direction="middle" className="border-silver/20 bg-background/80">
         {navItems.map((item) => (

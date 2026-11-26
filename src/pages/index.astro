@@ -1,11 +1,62 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import { getCollection } from "astro:content";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import BaseLayout from "../layouts/BaseLayout.astro";
+import NavBar from "../components/static/NavBar.astro";
+import HeroSection from "../components/static/HeroSection.astro";
+import Section from "../components/static/Section.astro";
+import SectionHeader from "../components/static/SectionHeader.astro";
+import ContactSection from "../components/static/ContactSection.astro";
+import Footer from "../components/static/Footer.astro";
+import BackToTop from "../components/static/BackToTop.astro";
+import MobileDock from "../components/islands/MobileDock";
+import TechStackSection from "../components/islands/TechStackSection";
+import ProjectShowcase from "../components/islands/ProjectShowcase";
+import type { Project } from "../types";
+
+const entries = await getCollection("projects");
+const projects: Project[] = entries.map((entry) => ({
+  id: entry.id,
+  ...entry.data,
+}));
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<BaseLayout>
+  <NavBar />
+  <MobileDock client:load />
+  <BackToTop />
+
+  <main>
+    <HeroSection />
+
+    <Section id="projects">
+      <div class="mx-auto max-w-5xl px-6">
+        <SectionHeader
+          eyebrow="Portfolio"
+          title="Projects"
+          description="Karya-karya Android yang pernah saya bangun."
+        />
+        <ProjectShowcase projects={projects} client:visible />
+      </div>
+    </Section>
+
+    <Section id="skills">
+      <div class="mx-auto max-w-5xl px-6">
+        <SectionHeader
+          eyebrow="Tech stack"
+          title="Skills"
+          description="Tool dan teknologi yang saya pakai sehari-hari."
+        />
+        <div class="flex justify-center">
+          <TechStackSection client:visible />
+        </div>
+      </div>
+    </Section>
+
+    <Section id="contact" class="py-0">
+      <ContactSection />
+    </Section>
+  </main>
+
+  <Footer />
+</BaseLayout>

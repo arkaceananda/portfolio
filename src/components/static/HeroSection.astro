@@ -1,33 +1,37 @@
 ---
-// HeroSection — konten statis; animasi fade-up lewat CSS.
-// Island FlickeringGrid (background), InteractiveHoverButton (CTA) dan Typewriter
-// akan dipasang di step 12.
+import DitherCard from "../islands/DitherCard";
+import FooterTerminal from "../islands/FooterTerminal";
+import HoverButton from "../islands/HoverButton";
+import Typewriter from "../islands/Typewriter";
+import HeroBackground from "../islands/HeroBackground";
 ---
 
-<section id="top" class="relative flex min-h-screen items-center overflow-hidden">
-  <div class="mx-auto w-full max-w-5xl px-6 py-24">
+<section id="top" class="relative isolate flex min-h-screen flex-col py-24">
+  <HeroBackground client:idle />
+
+  <!-- Mobile: lanyard di atas; Desktop: layer penuh section -->
+  <div class="relative z-0 h-[420px] w-full shrink-0 sm:absolute sm:inset-0 sm:h-auto">
+    <DitherCard client:visible />
+  </div>
+
+  <div class="pointer-events-none relative z-10 mx-auto my-auto w-full max-w-5xl px-6">
+    <h1 class="sr-only">Arka Aceananda — Android Developer</h1>
     <p class="animate-[fade-up_0.6s_ease-out] font-mono text-sm uppercase tracking-[0.2em] text-silver">
       Hello, I'm
     </p>
-    <h1 class="mt-4 animate-[fade-up_0.6s_ease-out_0.1s_both] font-fraunces text-5xl font-bold text-foreground sm:text-7xl">
-      Arka Aceananda
-    </h1>
-    <p class="mt-6 animate-[fade-up_0.6s_ease-out_0.2s_both] text-xl text-silver sm:text-2xl">
-      Android Developer
-    </p>
-    <p class="mt-2 animate-[fade-up_0.6s_ease-out_0.3s_both] font-mono text-sm text-silver-dim">
-      Kotlin · Jetpack Compose
-    </p>
+    <div class="mt-4 animate-[fade-up_0.6s_ease-out_0.2s_both] text-xl text-silver sm:text-2xl">
+      <Typewriter client:idle />
+    </div>
+
+    <div class="mt-10 w-full max-w-xl animate-[fade-up_0.6s_ease-out_0.3s_both]">
+      <FooterTerminal client:visible />
+    </div>
+
     <div class="mt-10 flex flex-wrap gap-4 animate-[fade-up_0.6s_ease-out_0.4s_both]">
-      <a
-        href="#projects"
-        class="inline-flex min-h-11 items-center rounded-md border border-silver/20 px-6 py-3 text-sm font-medium text-foreground transition-colors hover:bg-silver/10"
-      >
-        Lihat Projects
-      </a>
+      <span class="pointer-events-auto"><HoverButton href="#projects" client:visible>Lihat Projects</HoverButton></span>
       <a
         href="#contact"
-        class="inline-flex min-h-11 items-center rounded-md border border-silver/20 px-6 py-3 text-sm font-medium text-foreground transition-colors hover:bg-silver/10"
+        class="pointer-events-auto inline-flex min-h-11 items-center rounded-full border border-silver/20 px-6 py-3 text-sm font-semibold text-foreground transition-colors hover:bg-silver/10"
       >
         Hubungi Saya
       </a>

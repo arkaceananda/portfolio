@@ -6,16 +6,12 @@ import { socialLinks } from "../../data/social";
 <footer class="footer-shell border-t border-silver/10">
   <div class="mx-auto max-w-5xl px-6 py-12">
     <div class="footer-grid">
-      <div class="footer-terminal">
-        <p class="terminal-prompt">
-          <span class="t-user">arkaaceananda@fedora</span>
-          <span class="t-dim">in</span> <span class="t-dir">~</span>
-          <span class="t-dim">at</span> <time aria-hidden="true">--:--:--</time>
+      <div class="text-sm text-silver">
+        <p class="font-mono text-xs uppercase tracking-[0.2em] text-silver-dim">
+          Arka Aceananda
         </p>
-        <p class="terminal-cmd"><span class="t-arrow">&gt;</span> whoami</p>
-        <p class="terminal-out">Arka Aceananda - Android Developer</p>
-        <p class="terminal-out t-dim">
-          Kotlin · Jetpack Compose <span class="cursor-blink">█</span>
+        <p class="mt-2 max-w-xs text-silver">
+          Android Developer yang suka membangun pengalaman mobile yang sederhana dan bermakna.
         </p>
       </div>
       <nav aria-label="Menu footer" class="footer-nav">
@@ -70,22 +66,6 @@ import { socialLinks } from "../../data/social";
     line-height: 1.7;
     overflow-wrap: anywhere;
   }
-  .t-user {
-    color: var(--color-term-user);
-  }
-  .t-dim {
-    color: var(--color-silver-dim);
-  }
-  .t-dir {
-    color: var(--color-accent);
-  }
-  .t-arrow {
-    color: var(--color-accent);
-  }
-  .terminal-out {
-    color: var(--color-foreground);
-  }
-
   @media (max-width: 1023px) {
     .footer-grid {
       grid-template-columns: 1fr 1fr;

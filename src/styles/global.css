@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   margin: 0;
@@ -7,6 +13,12 @@ body {
   height: 100%;
   background-color: var(--color-background);
   color: var(--color-foreground);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 @theme {
@@ -44,6 +56,36 @@ body {
   --color-border: rgba(59, 42, 26, 0.1);
   --color-input: rgba(59, 42, 26, 0.1);
   --color-ring: #3b2a1a;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Terminal (dipakai island FooterTerminal) */
+.terminal-prompt,
+.terminal-cmd,
+.terminal-out {
+  font-family: var(--font-mono);
+}
+.t-user {
+  color: var(--color-term-user);
+}
+.t-dim {
+  color: var(--color-silver-dim);
+}
+.t-dir,
+.t-arrow {
+  color: var(--color-accent);
+}
+.terminal-out {
+  color: var(--color-foreground);
+}
+.t-whoami {
+  color: #4ade80;
 }
 
 /* Keyframes animasi */
