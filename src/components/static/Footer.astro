@@ -1,0 +1,114 @@
+---
+import { navItems } from "../../data/navigation";
+import { socialLinks } from "../../data/social";
+---
+
+<footer class="footer-shell border-t border-silver/10">
+  <div class="mx-auto max-w-5xl px-6 py-12">
+    <div class="footer-grid">
+      <div class="footer-terminal">
+        <p class="terminal-prompt">
+          <span class="t-user">arkaaceananda@fedora</span>
+          <span class="t-dim">in</span> <span class="t-dir">~</span>
+          <span class="t-dim">at</span> <time aria-hidden="true">--:--:--</time>
+        </p>
+        <p class="terminal-cmd"><span class="t-arrow">&gt;</span> whoami</p>
+        <p class="terminal-out">Arka Aceananda - Android Developer</p>
+        <p class="terminal-out t-dim">
+          Kotlin · Jetpack Compose <span class="cursor-blink">█</span>
+        </p>
+      </div>
+      <nav aria-label="Menu footer" class="footer-nav">
+        <ul class="flex flex-col gap-3">
+          {
+            navItems.map((item) => (
+              <li>
+                <a
+                  href={item.href}
+                  class="text-sm text-silver transition-colors hover:text-foreground"
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+      <ul class="flex flex-col gap-3">
+        {
+          socialLinks.map((link) => (
+            <li>
+              <a
+                href={link.href}
+                target={link.icon === "email" ? undefined : "_blank"}
+                rel={link.icon === "email" ? undefined : "noopener noreferrer"}
+                class="text-sm text-silver transition-colors hover:text-foreground"
+              >
+                {link.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+    <p class="mt-10 border-t border-silver/10 pt-6 text-xs text-silver-dim">
+      © {new Date().getFullYear()} Arka Aceananda. All rights reserved.
+    </p>
+  </div>
+</footer>
+
+<style>
+  .footer-grid {
+    display: grid;
+    gap: 32px;
+    grid-template-columns: minmax(0, 1.4fr) auto auto;
+    align-items: start;
+  }
+  .footer-terminal {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+  }
+  .t-user {
+    color: var(--color-term-user);
+  }
+  .t-dim {
+    color: var(--color-silver-dim);
+  }
+  .t-dir {
+    color: var(--color-accent);
+  }
+  .t-arrow {
+    color: var(--color-accent);
+  }
+  .terminal-out {
+    color: var(--color-foreground);
+  }
+
+  @media (max-width: 1023px) {
+    .footer-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+    .footer-terminal {
+      grid-column: 1 / -1;
+    }
+  }
+  @media (max-width: 639px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+    }
+    .footer-nav {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .footer-nav a {
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+    }
+    .footer-shell {
+      padding-bottom: calc(24px + env(safe-area-inset-bottom));
+    }
+  }
+</style>

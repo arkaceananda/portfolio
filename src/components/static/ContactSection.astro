@@ -1,0 +1,29 @@
+---
+import { socialLinks } from "../../data/social";
+---
+
+<section id="contact" class="mx-auto max-w-5xl px-6">
+  <p class="font-mono text-sm uppercase tracking-[0.2em] text-silver">Contact</p>
+  <h2 class="mt-2 font-fraunces text-3xl font-bold text-foreground sm:text-4xl">
+    Mari terhubung
+  </h2>
+  <p class="mt-3 max-w-2xl text-silver">
+    Tertarik berkolaborasi atau sekadar ingin berbicara tentang Android development?
+  </p>
+  <ul class="mt-8 flex flex-wrap gap-4">
+    {
+      socialLinks.map((link) => (
+        <li>
+          <a
+            href={link.href}
+            target={link.icon === "email" ? undefined : "_blank"}
+            rel={link.icon === "email" ? undefined : "noopener noreferrer"}
+            class="inline-flex min-h-11 items-center rounded-md border border-silver/20 px-5 py-3 text-sm text-foreground transition-colors hover:bg-silver/10"
+          >
+            {link.label}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</section>
