@@ -9,7 +9,7 @@ const projects = defineCollection({
     briefDescription: z.string(),
     longDescription: z.string(),
     techStack: z.array(z.string()),
-    platform: z.enum(["mobile", "desktop", "cli"]).default("mobile"),
+    platform: z.enum(["mobile", "web", "desktop", "cli"]).default("mobile"),
     videoUrl: z.string().optional(),
     previewImage: z.string().optional(),
     githubUrl: z.string(),

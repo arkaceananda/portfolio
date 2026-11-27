@@ -1,0 +1,12 @@
+{
+  "title": "SIJAR",
+  "briefDescription": "Inventaris dan peminjaman barang jurusan di Android.",
+  "longDescription": "Aplikasi Android berbasis Jetpack Compose untuk mengelola aset dan peminjaman peralatan jurusan, dengan backend Laravel 11.",
+  "techStack": ["Kotlin", "Jetpack Compose", "Retrofit", "Koin", "Laravel 11"],
+  "platform": "mobile",
+  "githubUrl": "https://github.com/arkaceananda/sijar",
+  "accentColor": "#7F52FF",
+  "problem": "Peminjaman barang dicatat manual dan sulit dilacak.",
+  "solution": "Katalog real-time, form tervalidasi, dan riwayat terkelompok dengan komunikasi terenkripsi.",
+  "keyFeatures": ["SSL Pinning", "AES-256 GCM", "Event bus", "WorkManager", "Multilingual ID/EN"]
+}

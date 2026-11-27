@@ -7,7 +7,7 @@ interface PhoneMockupProps {
 
 export default function PhoneMockup({ videoUrl, title }: PhoneMockupProps) {
   return (
-    <div data-theme="dark" className="w-[220px] max-w-full sm:w-[240px]">
+    <div data-theme="dark" className="w-[180px] max-w-full sm:w-[200px]">
       <AndroidMockup
         videoSrc={videoUrl}
         width={433}

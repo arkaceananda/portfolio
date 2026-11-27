@@ -5,6 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.11.0] - 2026-11-27
+
+### Added
+
+- `web` platform value for browser-based projects.
+- Real project data: SIJAR (Android), BurjoOrder (web), and deepClean (CLI), replacing the sample projects.
+
+### Changed
+
+- Project modal shows a wider text column and a smaller preview; the preview area is omitted entirely when no media is available.
+- Project descriptions are condensed into short overviews; full details remain in each project's GitHub README.
+
+[0.11.0]: https://github.com/arkaceananda/portfolio/releases/tag/v0.11.0
+
 ## [0.10.3] - 2026-11-27
 
 ### Changed

@@ -21,7 +21,7 @@ export interface Project {
   briefDescription: string;
   longDescription: string;
   techStack: string[];
-  platform: "mobile" | "desktop" | "cli";
+  platform: "mobile" | "web" | "desktop" | "cli";
   videoUrl?: string;
   previewImage?: string;
   githubUrl: string;

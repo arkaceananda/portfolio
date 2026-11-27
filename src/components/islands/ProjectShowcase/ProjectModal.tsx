@@ -19,6 +19,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
   }, [onClose]);
 
   const showPhone = project.platform === "mobile" && Boolean(project.videoUrl);
+  const hasPreview = showPhone || Boolean(project.videoUrl || project.previewImage);
 
   return (
     <div
@@ -29,7 +30,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
       onClick={onClose}
     >
       <div
-        className="relative grid max-h-[90vh] w-full max-w-5xl grid-cols-1 gap-6 overflow-y-auto rounded-2xl bg-background p-6 md:grid-cols-4"
+        className={`relative grid max-h-[90vh] w-full max-w-4xl gap-6 overflow-y-auto rounded-2xl bg-background p-6 ${hasPreview ? "md:grid-cols-5" : "grid-cols-1"}`}
         onClick={(event) => event.stopPropagation()}
       >
         <button
@@ -41,27 +42,36 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
           <X size={22} />
         </button>
 
-        <div className="md:col-span-1">
+        <div className={hasPreview ? "md:col-span-3" : undefined}>
           <h2 className="font-fraunces text-2xl font-semibold text-foreground">
             {project.title}
           </h2>
-          <p className="mt-3 text-sm text-silver">{project.longDescription}</p>
-          <h3 className="mt-5 font-mono text-xs uppercase tracking-widest text-silver-dim">
-            Problem
-          </h3>
-          <p className="mt-1 text-sm text-silver">{project.problem}</p>
-          <h3 className="mt-5 font-mono text-xs uppercase tracking-widest text-silver-dim">
-            Solution
-          </h3>
-          <p className="mt-1 text-sm text-silver">{project.solution}</p>
-          <h3 className="mt-5 font-mono text-xs uppercase tracking-widest text-silver-dim">
-            Key features
-          </h3>
-          <ul className="mt-1 list-disc space-y-1 pl-5 text-sm text-silver">
-            {project.keyFeatures.map((feature) => (
-              <li key={feature}>{feature}</li>
-            ))}
-          </ul>
+          <p className="mt-1 font-mono text-xs uppercase tracking-widest text-silver-dim">
+            {project.platform}
+          </p>
+          <p className="mt-3 text-sm leading-relaxed text-silver">
+            {project.longDescription}
+          </p>
+          <div className="mt-4 space-y-3">
+            <div>
+              <h3 className="font-mono text-[10px] uppercase tracking-widest text-silver-dim">Problem</h3>
+              <p className="text-sm text-silver">{project.problem}</p>
+            </div>
+            <div>
+              <h3 className="font-mono text-[10px] uppercase tracking-widest text-silver-dim">Solution</h3>
+              <p className="text-sm text-silver">{project.solution}</p>
+            </div>
+            <div>
+              <h3 className="font-mono text-[10px] uppercase tracking-widest text-silver-dim">Highlights</h3>
+              <ul className="mt-1 flex flex-wrap gap-x-4 gap-y-1 text-sm text-silver">
+                {project.keyFeatures.map((feature) => (
+                  <li key={feature} className="before:mr-1 before:text-silver-dim before:content-['·']">
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
           <div className="mt-6 flex flex-wrap gap-3">
             {project.githubUrl && (
               <a
@@ -92,32 +102,30 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
           </div>
         </div>
 
-        <div className="flex justify-center md:col-span-3">
-          {showPhone && project.videoUrl ? (
-            <PhoneMockup videoUrl={project.videoUrl} title={project.title} />
-          ) : project.videoUrl ? (
-            <video
-              src={project.videoUrl}
-              controls
-              autoPlay
-              muted
-              loop
-              playsInline
-              className="w-full rounded-xl"
-              aria-label={`Demo ${project.title}`}
-            />
-          ) : project.previewImage ? (
-            <img
-              src={project.previewImage}
-              alt={`Preview ${project.title}`}
-              className="w-full rounded-xl object-cover"
-            />
-          ) : (
-            <div className="flex aspect-video w-full items-center justify-center rounded-xl border border-silver/20 text-sm text-silver-dim">
-              Tidak ada preview
-            </div>
-          )}
-        </div>
+        {hasPreview && (
+          <div className={`flex justify-center ${hasPreview ? "md:col-span-2" : ""}`}>
+            {showPhone && project.videoUrl ? (
+              <PhoneMockup videoUrl={project.videoUrl} title={project.title} />
+            ) : project.videoUrl ? (
+              <video
+                src={project.videoUrl}
+                controls
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="w-full max-w-xs rounded-xl"
+                aria-label={`Demo ${project.title}`}
+              />
+            ) : project.previewImage ? (
+              <img
+                src={project.previewImage}
+                alt={`Preview ${project.title}`}
+                className="w-full max-w-xs rounded-xl object-cover"
+              />
+            ) : null}
+          </div>
+        )}
       </div>
     </div>
   );

@@ -1,0 +1,12 @@
+{
+  "title": "BurjoOrder",
+  "briefDescription": "Pemesanan burjo real-time dengan Laravel dan Livewire.",
+  "longDescription": "Aplikasi web pemesanan burjo berbasis Laravel 13 dan Livewire 3 dengan pembaruan real-time via Reverb, berjalan lokal di atas Laravel Sail.",
+  "techStack": ["Laravel 13", "Livewire 3", "Reverb", "FrankenPHP", "PostgreSQL"],
+  "platform": "web",
+  "githubUrl": "https://github.com/arkaceananda/burjo-order",
+  "accentColor": "#FF2D20",
+  "problem": "Proses pesanan burjo membutuhkan antarmuka web yang responsif dan langsung.",
+  "solution": "Livewire dan Reverb untuk pembaruan langsung, FrankenPHP worker mode, serta Cloudflare Tunnel untuk demo.",
+  "keyFeatures": ["Livewire 3", "Reverb", "FrankenPHP", "Cloudflare Tunnel", "Seed admin & kasir"]
+}

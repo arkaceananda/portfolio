@@ -1,0 +1,12 @@
+{
+  "title": "deepClean",
+  "briefDescription": "CLI Go untuk menemukan file lama dan tidak terpakai di Linux.",
+  "longDescription": "Tool command-line berbasis Go yang memindai sistem Linux untuk menemukan file besar, lama, dan paket orphan. Report-only secara default.",
+  "techStack": ["Go", "Linux", "dnf", "Flatpak", "TUI"],
+  "platform": "cli",
+  "githubUrl": "https://github.com/arkaceananda/deep-clean",
+  "accentColor": "#00ADD8",
+  "problem": "Penyimpanan Linux penuh oleh cache, log, dan file sementara yang sulit diidentifikasi.",
+  "solution": "Scan rekursif dengan ambang usia/ukuran, peringkat risiko, dan opsi hapus interaktif atau Trash.",
+  "keyFeatures": ["Risk levels", "dnf & Flatpak", "JSON report", "Telegram bot", "TUI config"]
+}
