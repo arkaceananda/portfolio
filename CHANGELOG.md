@@ -5,6 +5,24 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.7.0] - 2026-11-27
+
+### Added
+
+- Meta SEO lengkap: canonical, Open Graph, dan Twitter card di `BaseLayout.astro`.
+- `og-image.png` (1200x630) dari foto Tsaritsa untuk preview WhatsApp/LinkedIn.
+- Favicon custom (PNG + ICO) dari foto Tsaritsa.
+- `sitemap.xml` otomatis via `@astrojs/sitemap`.
+- Halaman 404.
+- ESLint flat config + Prettier config dan script `bun run lint` / `bun run format`.
+
+### Changed
+
+- `site` di `astro.config.mjs` menggunakan domain final `https://arkaaceananda.my.id`.
+- `.gitignore` diperluas untuk file environment dan log.
+
+[0.7.0]: https://github.com/arkaceananda/portfolio/releases/tag/v0.7.0
+
 ## [0.6.0] - 2026-11-27
 
 ### Added

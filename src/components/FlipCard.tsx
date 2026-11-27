@@ -164,12 +164,10 @@ const FlipCard: React.FC<FlipCardProps> = ({
     target.current = isBack(base) ? base - 180 : base + 180;
     if (reduce) turn.jump(target.current);
     else spin.current = animate(turn, target.current, { type: 'spring', stiffness, damping, restDelta: 0.05 });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [flipped]);
   useEffect(() => () => spin.current?.stop(), []);
   useEffect(() => {
     if (disabled) rest();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [disabled]);
 
   const onPointerDown = (e: PointerEvent<HTMLDivElement>) => {
