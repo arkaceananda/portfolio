@@ -166,7 +166,8 @@ const PHOTO_STYLE: CSSProperties = {
   inset: 'calc(var(--pc-parallax) * -1)',
   width: 'calc(100% + var(--pc-parallax) * 2)',
   height: 'calc(100% + var(--pc-parallax) * 2)',
-  transform: 'translate3d(var(--pc-shift-x), var(--pc-shift-y), 0)'
+  objectPosition: '70% bottom',
+  transform: 'translate3d(calc(var(--pc-shift-x) + 10%), var(--pc-shift-y), 0) scale(1.22)'
 };
 
 const SCRIM_STYLE: CSSProperties = {

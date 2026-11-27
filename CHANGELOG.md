@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.11.1] - 2026-11-27
+
+### Changed
+
+- Replaced the profile photo with `avatar.webp` (1200x1600, 180 KB); regenerated favicon and Open Graph image from it.
+- Adjusted intro card framing so the subject sits further right, removed the redundant handle, and changed the status to "Junior Developer".
+- Projects section description now covers mobile, web, and CLI work instead of Android only.
+
+[0.11.1]: https://github.com/arkaceananda/portfolio/releases/tag/v0.11.1
+
 ## [0.11.0] - 2026-11-27
 
 ### Added

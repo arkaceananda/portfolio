@@ -3,11 +3,11 @@ import ProfileCard from "@/components/ProfileCard";
 export default function IntroCard() {
   return (
     <ProfileCard
-      avatarUrl="/tsaritsa-icon.webp"
+      avatarUrl="/avatar.webp"
       name="Arka Aceananda"
       title="Android Developer"
-      handle="arkaaceananda"
-      status="Kotlin · Jetpack Compose"
+      handle=""
+      status="Junior Developer"
       statusColor="#4ade80"
       contactText="Contact"
       onContactClick={() => {
