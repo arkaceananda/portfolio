@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.10.1] - 2026-11-27
+
+### Changed
+
+- Profile photo is loaded eagerly with `fetchpriority="high"` so it is discoverable as the LCP image.
+- Theme toggle and mobile dock hydrate on idle instead of page load, keeping React/client runtime off the critical path.
+
+[0.10.1]: https://github.com/arkaceananda/portfolio/releases/tag/v0.10.1
+
 ## [0.10.0] - 2026-11-27
 
 ### Added

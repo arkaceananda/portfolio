@@ -485,7 +485,8 @@ const ProfileCard = ({
               style={PHOTO_STYLE}
               src={avatarUrl}
               alt={name || ''}
-              loading="lazy"
+              loading="eager"
+              fetchPriority="high"
               draggable={false}
             />
           )}
