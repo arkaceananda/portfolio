@@ -51,6 +51,27 @@ import "../styles/global.css";
       content="Portfolio Arka Aceananda, Android Developer. Kotlin, Jetpack Compose."
     />
     <meta name="twitter:image" content={new URL("/og-image.png", Astro.site).href} />
+
+    <script type="application/ld+json" is:inline set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": `${Astro.site}#person`,
+          name: "Arka Aceananda",
+          jobTitle: "Android Developer",
+          url: Astro.site!.href,
+          image: new URL("/og-image.png", Astro.site).href,
+          sameAs: ["https://github.com/arkaceananda", "mailto:arkamudya.aceananda@gmail.com"],
+        },
+        {
+          "@type": "ProfilePage",
+          "@id": `${Astro.site}#profile`,
+          url: Astro.site!.href,
+          mainEntity: { "@id": `${Astro.site}#person` },
+        },
+      ],
+    })} />
   </head>
   <body>
     <slot />

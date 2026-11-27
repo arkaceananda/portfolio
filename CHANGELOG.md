@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.10.2] - 2026-11-27
+
+### Added
+
+- Structured data (JSON-LD) with `Person` and `ProfilePage` schema: name, job title, URL, image, and `sameAs` links to GitHub and email.
+
+[0.10.2]: https://github.com/arkaceananda/portfolio/releases/tag/v0.10.2
+
 ## [0.10.1] - 2026-11-27
 
 ### Changed
