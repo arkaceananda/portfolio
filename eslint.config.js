@@ -1,10 +1,11 @@
+import { defineConfig } from "eslint/config";
 import astro from "eslint-plugin-astro";
 import * as astroParser from "astro-eslint-parser";
 import tseslint from "typescript-eslint";
 
 const parser = astroParser.parseForESLint ? astroParser : astroParser.default;
 
-export default tseslint.config(
+export default defineConfig(
   ...astro.configs.recommended,
   ...tseslint.configs.recommended,
   {

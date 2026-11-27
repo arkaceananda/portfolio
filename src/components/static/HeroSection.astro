@@ -1,40 +1,41 @@
 ---
-import DitherCard from "../islands/DitherCard";
+import IntroCard from "../islands/IntroCard";
 import HeroTerminal from "../islands/HeroTerminal";
 import HoverButton from "../islands/HoverButton";
 import Typewriter from "../islands/Typewriter";
 import HeroBackground from "../islands/HeroBackground";
 ---
 
-<section id="top" class="relative isolate flex min-h-screen flex-col py-24">
+<section id="top" class="relative isolate flex min-h-screen items-center bg-background py-12 sm:py-24">
   <HeroBackground client:idle />
 
-  <!-- Mobile: lanyard di atas; Desktop: layer penuh section -->
-  <div class="relative z-0 h-[420px] w-full shrink-0 sm:absolute sm:inset-0 sm:h-auto">
-    <DitherCard client:visible />
-  </div>
+  <div class="relative z-10 mx-auto grid w-full max-w-5xl items-center gap-12 px-6 lg:grid-cols-[minmax(0,1fr)_340px]">
+    <div class="order-2 lg:order-1">
+      <h1 class="sr-only">Arka Aceananda — Android Developer</h1>
+      <p class="animate-[fade-up_0.6s_ease-out] font-mono text-sm uppercase tracking-[0.2em] text-silver">
+        Hello, I'm
+      </p>
+      <div class="mt-4 animate-[fade-up_0.6s_ease-out_0.2s_both] text-xl text-silver sm:text-2xl">
+        <Typewriter client:idle />
+      </div>
 
-  <div class="pointer-events-none relative z-10 mx-auto my-auto w-full max-w-5xl px-6">
-    <h1 class="sr-only">Arka Aceananda — Android Developer</h1>
-    <p class="animate-[fade-up_0.6s_ease-out] font-mono text-sm uppercase tracking-[0.2em] text-silver">
-      Hello, I'm
-    </p>
-    <div class="mt-4 animate-[fade-up_0.6s_ease-out_0.2s_both] text-xl text-silver sm:text-2xl">
-      <Typewriter client:idle />
+      <div class="mt-10 w-full max-w-xl animate-[fade-up_0.6s_ease-out_0.3s_both]">
+        <HeroTerminal client:visible />
+      </div>
+
+      <div class="mt-10 flex flex-wrap gap-4 animate-[fade-up_0.6s_ease-out_0.4s_both]">
+        <HoverButton href="#projects" client:visible>Lihat Projects</HoverButton>
+        <a
+          href="#contact"
+          class="inline-flex min-h-11 items-center rounded-full border border-silver/20 px-6 py-3 text-sm font-semibold text-foreground transition-colors hover:bg-silver/10"
+        >
+          Hubungi Saya
+        </a>
+      </div>
     </div>
 
-    <div class="mt-10 w-full max-w-xl animate-[fade-up_0.6s_ease-out_0.3s_both]">
-      <HeroTerminal client:visible />
-    </div>
-
-    <div class="mt-10 flex flex-wrap gap-4 animate-[fade-up_0.6s_ease-out_0.4s_both]">
-      <span class="pointer-events-auto"><HoverButton href="#projects" client:visible>Lihat Projects</HoverButton></span>
-      <a
-        href="#contact"
-        class="pointer-events-auto inline-flex min-h-11 items-center rounded-full border border-silver/20 px-6 py-3 text-sm font-semibold text-foreground transition-colors hover:bg-silver/10"
-      >
-        Hubungi Saya
-      </a>
+    <div class="order-1 flex justify-center lg:order-2">
+      <IntroCard client:visible />
     </div>
   </div>
 </section>

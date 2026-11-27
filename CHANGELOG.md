@@ -5,6 +5,28 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.9.0] - 2026-11-27
+
+### Added
+
+- ProfileCard intro card (name, role, handle, status, Contact button) with tilt disabled.
+- LightRays hero background with theme-aware grey rays.
+- Theme toggle in the mobile dock.
+- Security headers via `public/_headers`.
+
+### Changed
+
+- Replaced the WebGL Lanyard/FlipCard/Dither stack with lightweight CSS-based components.
+- Replaced IconCloud with OrbitImages and FlickeringGrid with LightRays.
+- Hero content is vertically centered and scrollable on mobile.
+
+### Fixed
+
+- Removed unused files and duplicate dependencies (`three`, `@types/three`, `framer-motion`).
+- ESLint flat config uses `defineConfig`.
+
+[0.9.0]: https://github.com/arkaceananda/portfolio/releases/tag/v0.9.0
+
 ## [0.7.0] - 2026-11-27
 
 ### Added

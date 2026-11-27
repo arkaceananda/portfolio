@@ -65,6 +65,17 @@ body {
   display: none;
 }
 
+/* Hero background (LightRays) — warna mengikuti tema */
+:root {
+  --hero-ray-color: rgba(160, 160, 160, 0.22);
+}
+[data-theme="light"] {
+  --hero-ray-color: rgba(59, 42, 26, 0.2);
+}
+[data-theme="light"] .hero-rays [class*="mix-blend-screen"] {
+  mix-blend-mode: multiply;
+}
+
 /* Terminal (dipakai island HeroTerminal) */
 .terminal-prompt,
 .terminal-cmd,

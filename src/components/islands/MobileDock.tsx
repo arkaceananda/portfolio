@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import { ArrowUp, LayoutGrid, Mail, Sparkles } from "lucide-react";
 
 import { Dock, DockIcon } from "@/components/magicui/dock";
+import ThemeToggle from "./ThemeToggle";
 import { navItems } from "@/data/navigation";
 
 const ICONS: Record<string, ReactNode> = {
@@ -35,6 +36,14 @@ export default function MobileDock() {
             </span>
           </DockIcon>
         ))}
+        <DockIcon className="group relative min-h-11 min-w-11 text-silver hover:text-foreground">
+          <span className="flex min-h-11 min-w-11 items-center justify-center">
+            <ThemeToggle />
+          </span>
+          <span className="pointer-events-none absolute -top-9 rounded bg-foreground px-2 py-1 text-xs whitespace-nowrap text-background opacity-0 transition-opacity group-hover:opacity-100 group-focus-within:opacity-100">
+            Ganti tema
+          </span>
+        </DockIcon>
       </Dock>
     </nav>
   );

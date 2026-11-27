@@ -1,32 +1,14 @@
-import { useEffect, useState } from "react";
-
-import { FlickeringGrid } from "@/components/magicui/flickering-grid";
+import { LightRays } from "@/components/magicui/light-rays";
 
 export default function HeroBackground() {
-  const [reducedMotion, setReducedMotion] = useState(true);
-
-  useEffect(() => {
-    const query = window.matchMedia("(prefers-reduced-motion: reduce)");
-    setReducedMotion(query.matches);
-    const onChange = (event: MediaQueryListEvent): void =>
-      setReducedMotion(event.matches);
-    query.addEventListener("change", onChange);
-    return () => query.removeEventListener("change", onChange);
-  }, []);
-
-  if (reducedMotion) return null;
-
   return (
-    <div
-      aria-hidden="true"
-      className="pointer-events-none absolute inset-0 z-0 opacity-100"
-    >
-      <FlickeringGrid
-        color="rgb(160, 160, 160)"
-        squareSize={4}
-        gridGap={6}
-        flickerChance={0.2}
-        maxOpacity={0.3}
+    <div aria-hidden="true" className="hero-rays pointer-events-none absolute inset-0 z-0 h-full w-full overflow-hidden">
+      <LightRays
+        count={5}
+        color="var(--hero-ray-color)"
+        blur={48}
+        speed={18}
+        length="65vh"
         className="h-full w-full"
       />
     </div>
