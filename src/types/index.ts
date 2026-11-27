@@ -21,9 +21,13 @@ export interface Project {
   briefDescription: string;
   longDescription: string;
   techStack: string[];
-  videoUrl: string;
+  platform: "mobile" | "desktop" | "cli";
+  videoUrl?: string;
+  previewImage?: string;
   githubUrl: string;
-  apkUrl: string;
+  apkUrl?: string;
+  binaryUrl?: string;
+  binaryLabel?: string;
   accentColor: string;
   problem: string;
   solution: string;

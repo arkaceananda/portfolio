@@ -5,6 +5,25 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.10.0] - 2026-11-27
+
+### Added
+
+- Non-mobile project support: `platform` field (mobile/desktop/cli), optional `previewImage`, `binaryUrl` and `binaryLabel`.
+- Adaptive project preview: phone mockup for mobile videos, plain video/image for other platforms, placeholder when absent.
+- APK and binary download buttons appear only when their URLs are set.
+
+### Changed
+
+- Project cards show an optional preview image and platform label.
+
+### Fixed
+
+- Hero no longer overflows horizontally on mobile: grid children use `min-w-0` so long terminal prompts can shrink.
+- Terminal content wraps inside `<pre>` (`white-space: pre-wrap`), removing the inner horizontal scrollbar and clipped clock text.
+
+[0.10.0]: https://github.com/arkaceananda/portfolio/releases/tag/v0.10.0
+
 ## [0.9.0] - 2026-11-27
 
 ### Added

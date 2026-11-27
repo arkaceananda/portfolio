@@ -83,6 +83,13 @@ body {
   font-family: var(--font-mono);
   font-size: 18px;
   line-height: 1.9;
+  overflow-wrap: anywhere;
+}
+
+/* Magic UI Terminal membungkus konten dalam <pre> (white-space: pre default) */
+.hero-terminal pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
 }
 .t-user {
   color: var(--color-term-user);

@@ -19,7 +19,7 @@ export default function HeroTerminal() {
   }, []);
 
   return (
-    <Terminal sequence={false} className="border-silver/20 bg-[#141414]">
+    <Terminal sequence={false} className="hero-terminal border-silver/20 bg-[#141414]">
       <div className="footer-terminal min-h-56" role="group" aria-label="Terminal: whoami">
         <p className="terminal-prompt">
           <span className="t-user">arkaaceananda@fedora</span>{" "}

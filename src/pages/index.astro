@@ -18,6 +18,7 @@ const entries = await getCollection("projects");
 const projects: Project[] = entries.map((entry) => ({
   id: entry.id,
   ...entry.data,
+  platform: entry.data.platform ?? "mobile",
 }));
 ---
 

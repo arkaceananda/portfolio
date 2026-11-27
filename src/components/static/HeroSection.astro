@@ -6,11 +6,11 @@ import Typewriter from "../islands/Typewriter";
 import HeroBackground from "../islands/HeroBackground";
 ---
 
-<section id="top" class="relative isolate flex min-h-screen items-center bg-background py-12 sm:py-24">
+<section id="top" class="relative isolate flex min-h-screen items-start bg-background py-12 sm:py-24">
   <HeroBackground client:idle />
 
-  <div class="relative z-10 mx-auto grid w-full max-w-5xl items-center gap-12 px-6 lg:grid-cols-[minmax(0,1fr)_340px]">
-    <div class="order-2 lg:order-1">
+  <div class="relative z-10 mx-auto my-auto grid w-full max-w-5xl items-center gap-12 px-6 lg:grid-cols-[minmax(0,1fr)_340px]">
+    <div class="order-2 min-w-0 lg:order-1">
       <h1 class="sr-only">Arka Aceananda — Android Developer</h1>
       <p class="animate-[fade-up_0.6s_ease-out] font-mono text-sm uppercase tracking-[0.2em] text-silver">
         Hello, I'm
@@ -19,7 +19,7 @@ import HeroBackground from "../islands/HeroBackground";
         <Typewriter client:idle />
       </div>
 
-      <div class="mt-10 w-full max-w-xl animate-[fade-up_0.6s_ease-out_0.3s_both]">
+      <div class="mt-10 w-full min-w-0 max-w-xl animate-[fade-up_0.6s_ease-out_0.3s_both]">
         <HeroTerminal client:visible />
       </div>
 

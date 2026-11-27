@@ -18,6 +18,8 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
     return () => window.removeEventListener("keydown", onKeyDown);
   }, [onClose]);
 
+  const showPhone = project.platform === "mobile" && Boolean(project.videoUrl);
+
   return (
     <div
       role="dialog"
@@ -61,25 +63,60 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
             ))}
           </ul>
           <div className="mt-6 flex flex-wrap gap-3">
-            <a
-              href={project.githubUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex min-h-11 items-center gap-2 rounded-md border border-silver/20 px-4 text-sm text-foreground hover:bg-silver/10"
-            >
-              <ExternalLink size={16} /> Source
-            </a>
-            <a
-              href={project.apkUrl}
-              className="inline-flex min-h-11 items-center gap-2 rounded-md border border-silver/20 px-4 text-sm text-foreground hover:bg-silver/10"
-            >
-              <Download size={16} /> APK
-            </a>
+            {project.githubUrl && (
+              <a
+                href={project.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex min-h-11 items-center gap-2 rounded-md border border-silver/20 px-4 text-sm text-foreground hover:bg-silver/10"
+              >
+                <ExternalLink size={16} /> Source
+              </a>
+            )}
+            {project.apkUrl && (
+              <a
+                href={project.apkUrl}
+                className="inline-flex min-h-11 items-center gap-2 rounded-md border border-silver/20 px-4 text-sm text-foreground hover:bg-silver/10"
+              >
+                <Download size={16} /> APK
+              </a>
+            )}
+            {project.binaryUrl && (
+              <a
+                href={project.binaryUrl}
+                className="inline-flex min-h-11 items-center gap-2 rounded-md border border-silver/20 px-4 text-sm text-foreground hover:bg-silver/10"
+              >
+                <Download size={16} /> {project.binaryLabel ?? "Download"}
+              </a>
+            )}
           </div>
         </div>
 
         <div className="flex justify-center md:col-span-3">
-          <PhoneMockup videoUrl={project.videoUrl} title={project.title} />
+          {showPhone && project.videoUrl ? (
+            <PhoneMockup videoUrl={project.videoUrl} title={project.title} />
+          ) : project.videoUrl ? (
+            <video
+              src={project.videoUrl}
+              controls
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="w-full rounded-xl"
+              aria-label={`Demo ${project.title}`}
+            />
+          ) : project.previewImage ? (
+            <img
+              src={project.previewImage}
+              alt={`Preview ${project.title}`}
+              className="w-full rounded-xl object-cover"
+            />
+          ) : (
+            <div className="flex aspect-video w-full items-center justify-center rounded-xl border border-silver/20 text-sm text-silver-dim">
+              Tidak ada preview
+            </div>
+          )}
         </div>
       </div>
     </div>
