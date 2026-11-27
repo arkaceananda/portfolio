@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import { Terminal } from "@/components/magicui/terminal";
 
-export default function FooterTerminal() {
+export default function HeroTerminal() {
   const [time, setTime] = useState("--:--:--");
 
   useEffect(() => {
@@ -20,7 +20,7 @@ export default function FooterTerminal() {
 
   return (
     <Terminal sequence={false} className="border-silver/20 bg-[#141414]">
-      <div className="footer-terminal min-h-48" role="group" aria-label="Terminal: whoami">
+      <div className="footer-terminal min-h-56" role="group" aria-label="Terminal: whoami">
         <p className="terminal-prompt">
           <span className="t-user">arkaaceananda@fedora</span>{" "}
           <span className="t-dim">in</span> <span className="t-dir">~</span>{" "}

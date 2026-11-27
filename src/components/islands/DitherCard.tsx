@@ -25,7 +25,7 @@ export default function DitherCard({ className }: DitherCardProps) {
         fallback={
           <div className="flex h-full w-full items-center justify-center rounded-2xl border border-silver/20 bg-background">
             <img
-              src="/profile.svg"
+              src="/tsaritsa-icon.webp"
               alt="Foto profil Arka Aceananda"
               className="h-full w-full object-cover"
             />
@@ -33,14 +33,14 @@ export default function DitherCard({ className }: DitherCardProps) {
         }
       >
         <Lanyard
-          frontImage="/profile.svg"
-          backImage="/profile-dither.svg"
+          frontImage="/tsaritsa-icon.webp"
+          backImage="/tsaritsa-dither.webp"
           anchor="right"
           imageFit="cover"
           orientation="portrait"
           finish="glossy"
           size={size}
-          strapLength={0.42}
+          strapLength={0.58}
           strapWidth={0.75}
           strapColor="#1a1a1a"
           metal="silver"

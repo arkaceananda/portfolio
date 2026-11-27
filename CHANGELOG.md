@@ -5,6 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.6.0] - 2026-11-27
+
+### Added
+
+- Real Tsaritsa photo with a pre-computed dithered variant for the lanyard card back face.
+
+### Changed
+
+- Renamed `FooterTerminal` to `HeroTerminal` (the terminal lives in the hero).
+- Terminal font enlarged to 18px with looser line height; lanyard hangs lower.
+- Lanyard rendering optimized: antialias off, pixel ratio 1, fewer band samples and smaller card textures.
+
+[0.6.0]: https://github.com/arkaceananda/portfolio/releases/tag/v0.6.0
+
 ## [0.5.0] - 2026-11-26
 
 ### Added

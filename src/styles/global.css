@@ -65,11 +65,13 @@ body {
   display: none;
 }
 
-/* Terminal (dipakai island FooterTerminal) */
+/* Terminal (dipakai island HeroTerminal) */
 .terminal-prompt,
 .terminal-cmd,
 .terminal-out {
   font-family: var(--font-mono);
+  font-size: 18px;
+  line-height: 1.9;
 }
 .t-user {
   color: var(--color-term-user);
