@@ -3,7 +3,7 @@ import ProfileCard from "@/components/ProfileCard";
 export default function IntroCard() {
   return (
     <ProfileCard
-      avatarUrl="/avatar.webp"
+      avatarUrl="/avatar-v2.webp"
       name="Arka Aceananda"
       title="Android Developer"
       handle=""

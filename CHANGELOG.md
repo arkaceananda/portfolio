@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.11.2] - 2026-11-28
+
+### Changed
+
+- Added cache-busted asset URLs (`avatar-v2.webp`, `favicon-v2.png`, `favicon-v2.ico`, `og-image-v2.png`) and updated all references in the intro card, favicons, Open Graph, Twitter cards, and structured data.
+
+[0.11.2]: https://github.com/arkaceananda/portfolio/releases/tag/v0.11.2
+
 ## [0.11.1] - 2026-11-27
 
 ### Changed
